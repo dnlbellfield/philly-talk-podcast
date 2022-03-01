@@ -1,5 +1,5 @@
 # The Philly Talk Podcast with YouTube API
-Write a short sentence or two about this project and what it does. Be sure to include a link and a screenshot (we're front end devs so we can actually see our work!).
+This is the offical website for The Philly Talk Podcast. The Philly Talk Podcast is a Youtube channel with 17K+ followers. The channel is focused on Philadelphia sports with interviews from NFL players and sports media personnel. 
 
 **Link to project:** https://phillytalkpodcast.netlify.app/
 
