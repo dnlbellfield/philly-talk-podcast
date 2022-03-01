@@ -8,37 +8,44 @@ This is the offical website for The Philly Talk Podcast. The Philly Talk Podcast
 ## How It's Made:
 
 **Tech used:** HTML, CSS, JavaScript, Google/Youtube API
-Authorize a request
-Description: The auth.js script demonstrates how to use the Google APIs Client Library for JavaScript to provide API access and authorize user requests. All of the subsequent samples on this page use this script to authorize their requests.
+Use CORS
+Google APIs support CORS. If your application needs to do media uploads and downloads, it should use CORS. See the CORS Support page for details.
 
-For requests that do not require authentication, you could also use the key query parameter to specify an API key rather than using OAuth 2.0.
+Supported environments
+The JavaScript client library works with the same browsers supported by Google Apps except that mobile browsers are currently not fully supported. It only works within HTML documents with a <body> element served using the https (preferred) and http protocols. However, <iframe sandbox> elements and other restricted execution contexts are not supported.
 
-Note: You need to update the client ID in the auth.js file. You can obtain your own client ID by registering your application in the Google Developers Console.
+Setup
+Get a Google Account
+First, sign up for a Google Account if you do not already have one.
 
-Do resumable uploads with CORS
-Method: youtube.videos.insert Description: This code sample demonstrates how to execute a resumable upload using XHR/CORS.
+Create a Google project
+Go to the Google API Console. Click Create project, enter a name, and click Create.
 
-Create a playlist
-Method: youtube.playlists.insert
-Description: This JavaScript code creates a private playlist and adds videos to that playlist. (You could, of course, modify the code so that it creates a publicly visible playlist or so that it checks a form value to determine whether the playlist is public or private.) Note that you need to update the client ID in the auth.js file to run this code.
+Enable Google APIs
+Next, decide which Google APIs your application needs to use and enable them for your project. Use the APIs Explorer to explore Google APIs that the JavaScript client library can work with.
 
-The HTML page uses JQuery, along with the auth.js and playlist_updates.js JavaScript files, to display a simple form for adding videos to the playlist.
+To enable an API for your project, do the following:
 
-Retrieve my uploads
-Method: youtube.playlistItems.list
-Description: The JavaScript sample code performs the following functions:
+Open the API Library in the Google API Console. If prompted, select a project or create a new one. The API Library lists all available APIs, grouped by product family and popularity.
+If the API you want to enable isn't visible in the list, use search to find it.
+Select the API you want to enable, then click the Enable button.
+If prompted, enable billing.
+If prompted, accept the API's Terms of Service.
+Get access keys for your application
+Google defines two levels of API access:
 
-It retrieves the playlist ID for videos uploaded to the user's channel using the API's channels.list method. This API call also sets the mine parameter to true to retrieve channel information for the authorizing user.
-It passes that ID to the playlistItems.list method to retrieve the videos in that list.
-It displays the list of videos.
-It constructs next and previous page buttons and sets their visibility based on the information in the API response.
-The HTML page uses JQuery, the auth.js and my_uploads.js JavaScript files, and a CSS file to display the list of uploaded videos.
+Level	Description	Requires:
+Simple	API calls do not access any private user data	API key
+Authorized	API calls can read and write private user data, or the application's own data	OAuth 2.0 credentials
+To acquire an API key for simple access, do the following:
+Open the Credentials page in the "APIs & Services" console.
+Click Create credentials > API key and select the appropriate key type.
+To keep your API keys secure, follow the best practices for securely using API keys.
 
-Search by keyword
-Method: youtube.search.list
-Description: This code sample calls the API's search.list method to retrieve search results associated with a particular keyword. The HTML page uses JQuery, along with the auth.js and search.js JavaScript files, to show a simple search form and display the list of search results.
-
-In addition to the JavaScript file described above, the HTML page uses jQuery, which provides helper methods to simplify HTML document traversing, event handling, animating and Ajax interactions. It also uses the Google API loader (www.google.com/jsapi), which lets you easily import one or more Google APIs. This example uses the API loader to load the Google Visualization API, which is used to chart the retrieved Analytics data. Finally, the Google APIs Client Library for JavaScript helps you to implement OAuth 2.0 authentication and to call the YouTube Analytics API.
+To acquire OAuth 2.0 credentials for authorized access, do the following:
+Open the Credentials page in the "APIs & Services" console.
+Click Create credentials > OAuth client ID and select the appropriate Application type.
+For information about using OAuth 2.0 credentials, see the Authentication page.
 
 
 ## Lessons Learned:
