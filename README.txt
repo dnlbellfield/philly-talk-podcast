@@ -8,7 +8,7 @@ Write a short sentence or two about this project and what it does. Be sure to in
 
 **Link to project:** https://phillytalkpodcast.netlify.app/
 
-![alt tag](http://placecorgi.com/1200/650)
+![alt tag](https://user-images.githubusercontent.com/47239035/156243196-4dab4828-117c-46ec-b34e-42fcfc4fea6d.png)
 
 ## How It's Made:
 
